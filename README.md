@@ -1,13 +1,16 @@
 # puppeteer-plus
+
 Puppeteer addon for web scraping
 
 This is intended to be installed alonside Puppeteer to add some useful tools to the default Puppeteer prototypes useful for web scraping.
 
 # How to
 
-First, install Puppeteer and Puppeteer-Plus
+First, install Puppeteer-Extra, Puppeteer-Extra-Plugin-Stealth and Puppeteer-Plus
 
-`npm i puppeteer`
+`npm i puppeteer-extra`
+
+`npm i puppeteer-extra-plugin-stealth`
 
 `npm i puppeteer-plus`
 
