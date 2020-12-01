@@ -106,7 +106,7 @@ class ElementSelector {
   }
 }
 
-const { Page } = require("../puppeteer/lib/Page");
+const { Page } = require("../puppeteer/lib/cjs/puppeteer/common/Page");
 
 /**
  * Prepares a selector to make scrapping queries
@@ -155,7 +155,7 @@ Page.prototype.fill = async function(selector, fields) {
   return true;
 };
 
-const { ElementHandle } = require("../puppeteer/lib/JSHandle");
+const { ElementHandle } = require("../puppeteer/lib/cjs/puppeteer/common/JSHandle");
 
 /**
  * Check if element is visible in the DOM
