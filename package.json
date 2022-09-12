@@ -1,5 +1,5 @@
 {
-  "name": "17gstyron-puppeteer-plus",
+  "name": "puppeteer-plus-plus",
   "version": "4.0.0",
   "description": "Puppeteer addon for web scraping",
   "main": "index.js",
