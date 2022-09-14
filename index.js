@@ -46,7 +46,7 @@ class ElementSelector {
       if ($el == null) {
         return $el;
       }
-      const handle = await that._page.evaluateHandle(
+      const handle = await that.evaluateHandle(
         (el, attr) => el.getAttribute(attr),
         $el,
         attr
@@ -65,7 +65,7 @@ class ElementSelector {
       if ($el == null) {
         return $el;
       }
-      const handle = await that._page.evaluateHandle((el) => el.innerText, $el);
+      const handle = await that.evaluateHandle((el) => el.innerText, $el);
       return await handle.jsonValue();
     });
   }
@@ -80,7 +80,7 @@ class ElementSelector {
       if ($el == null) {
         return $el;
       }
-      const handle = await that._page.evaluateHandle((el) => el.innerHTML, $el);
+      const handle = await that.evaluateHandle((el) => el.innerHTML, $el);
       return await handle.jsonValue();
     });
   }
@@ -96,7 +96,7 @@ class ElementSelector {
       if ($el == null) {
         return $el;
       }
-      const handle = await that._page.evaluateHandle(
+      const handle = await that.evaluateHandle(
         (el, prop) => el[prop],
         $el,
         prop
@@ -171,7 +171,7 @@ ElementHandle.prototype.isVisible = async function () {
  * @returns {Promise<String>}
  */
 ElementHandle.prototype.getAttribute = async function (name) {
-  const handle = await this._page.evaluateHandle(
+  const handle = await this.evaluateHandle(
     (el, name) => {
       if (name === "src") {
         return el.src;
@@ -190,7 +190,7 @@ ElementHandle.prototype.getAttribute = async function (name) {
  * @returns {Promise<String>}
  */
 ElementHandle.prototype.attributes = async function () {
-  const handle = await this._page.evaluateHandle(async (el) => {
+  const handle = await this.evaluateHandle(async (el) => {
     const attrs = await el.attributes;
     return attrs;
   }, this);
@@ -202,7 +202,7 @@ ElementHandle.prototype.attributes = async function () {
  * @returns {Promise<String>}
  */
 ElementHandle.prototype.innerText = async function () {
-  const handle = await this._page.evaluateHandle((el) => el.innerText, this);
+  const handle = await this.evaluateHandle((el) => el.innerText, this);
   return await handle.jsonValue();
 };
 
@@ -212,7 +212,7 @@ ElementHandle.prototype.innerText = async function () {
  * @returns {Promise<String>}
  */
 ElementHandle.prototype.prop = async function (prop) {
-  const handle = await this._page.evaluateHandle(
+  const handle = await this.evaluateHandle(
     (el, prop) => el[prop],
     this,
     prop
