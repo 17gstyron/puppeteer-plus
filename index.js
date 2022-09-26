@@ -179,7 +179,6 @@ ElementHandle.prototype.getAttribute = async function (name) {
         return el.getAttribute(name);
       }
     },
-    this,
     name
   );
   return await handle.jsonValue();
