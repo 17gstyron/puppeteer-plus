@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-plus-plus",
-  "version": "5.0.1",
+  "version": "6.0.0",
   "description": "Puppeteer addon for web scraping",
   "main": "index.js",
   "scripts": {
